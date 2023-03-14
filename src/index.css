@@ -1,0 +1,367 @@
+/* @font-face {
+  font-family: 'Harry P';
+  src: url('https://www.fontsaddict.com/fontface/harry-p.TTF');
+}
+
+@import url('https://fonts.cdnfonts.com/css/harry-potter'); */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #000000;
+  color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.transBack{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+/* Nav */
+#nav{
+  position: absolute;
+  /* width: 1440px; */
+  width: 100%;
+  height: 96px;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#logo{
+  position: absolute;
+  width: 250px;
+  height: 80px;
+  left: 16px;
+  top: 16px;
+}
+
+#logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Background */
+.container{
+  width: 100%;
+  height: 100vh;
+}
+
+#backImg{
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#backImg img{
+  width: 2050px;
+  height: 120vh;
+  position: relative;
+  left: -490px;
+  top: -90px;
+  object-fit: fill;
+}
+
+#title{
+  position: absolute;
+  /* width: 716px;
+  height: 332px; */
+  width: 550px;
+  height: 250px;
+  left: 795px;
+  /* top: 40px; */
+  top: 50px;
+}
+
+#title img{
+  width: 100%;
+  height: 100%;
+}
+
+/* SocMed Icons */
+.socIcons{
+  width: 138px;
+  height: 30px;
+  position: absolute;
+  left: 18px;
+  top: 670px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soc-link{
+  color: #fff;
+}
+
+.fa-brands{
+  width: 30px;
+  height: 30px;
+  font-size: larger;
+  text-align: center;
+}
+
+.fa-brands:hover{
+  cursor: pointer;
+  color: #0D5B2B;
+}
+
+/* Bio */
+.bioCont{
+  width: 725px;
+  /* height: 199px; */
+  height: 170px;
+  position: absolute;
+  left: 795px;
+  /* top: 369px; */
+  top: 270px;
+}
+
+.rate{
+  /* width: 350px; */
+  width: 474px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  font-size: 18px;
+}
+
+.fa-star{
+  width: 20px;
+  height: 20px;
+  color: yellow;
+  text-align: center;
+  margin-right: 10px;
+}
+
+p span{
+  font-size: 25px;
+}
+
+#details{
+  margin-left: 40px;
+}
+
+.synopsis{
+  width: 721px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#bio{
+  font-size: 20px;
+  width: 490px;
+  /* height: 138px; */
+  margin: 10px 0 0 30px;
+  padding-top: 10px;
+}
+
+.trailer{
+  width: 202px;
+  height: 138px;
+  /* margin-top: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: #fff;
+}
+
+.play-button{
+  width: 60px;
+  height: 60px;
+  background: #0D5B2B;
+  border: 3px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button i{
+  /* width: 100%;
+  height: 100%;
+  text-align: center; */
+  font-size: x-large;
+}
+
+
+.button-text{
+  color: #0D5B2B;
+  font-weight: 700;
+}
+
+.trailer-link{
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Gallary */
+#galleryCont{
+  /* width: 490px; */
+  width: 520px;
+  height: 215px;
+  position: absolute;
+  /* left: 795px;
+  top: 470px; */
+  left: 695px;
+  top: 445px;
+}
+
+#galleryCont span,
+#castCont span{
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.slider-content{
+  white-space: nowrap;
+  width: 490px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.slider-item{
+  width: 145px;
+  height: 160px;
+}
+
+.slider-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#gallery{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.right,
+.left{
+  /* border: 3px solid #0D5B2B; */
+  color: #0D5B2B;
+  /* width: 25px; */
+  width: 15px;
+  /* height: 45px; */
+  height: 32px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Popup */
+.popup{
+  /* position: fixed; */
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 835px;
+  height: 400px;
+  /* z-index: 1; */
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.popup-content{
+  background-color: white;
+  /* position: absolute;
+  top: 20%;
+  left: 30%; */
+  /* width: 40%; */
+  width: 100%;
+  height: 100%;
+  /* padding: 20px; */
+  border-radius: 5px;
+  border: 2px solid black;
+  color: #000000;
+}
+
+.close {
+  color: #0D5B2B;
+  /* float: right; */
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+}
+
+.close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.popup-content img{
+  width: 100%;
+  height: 100%;
+}
+
+#castCont{
+  width: 260px;
+  height: 215px;
+  position: absolute;
+  /* left: 1230px; */
+  left: 1265px;
+  top: 445px;
+}
+
+
+/* #cast{
+  border: 1px solid purple;
+}
+
+.cast-content{
+  border: 1px solid green;
+} */
+
+
+.cast-item{
+  /* border: 1px solid yellow; */
+  display: flex;
+  align-items: center;
+  margin: 5px 0 5px 0;
+}
+
+.cast-img{
+  width: 50px;
+  height: 52px;
+  margin-right: 10px;
+}
+
+.cast-img img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.up, .down{
+  text-align: center;
+  cursor: pointer;
+  color: #0D5B2B;
+}
