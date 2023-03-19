@@ -98,7 +98,7 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
     let style = {};
 
     return (
-        <div id='gallery'>
+        <div id='gallery' className='fade-in'>
             {sliderHasMoved && (
                 <SliderControl arrowDirection={"left"} onClick={handlePrev} />
             )}

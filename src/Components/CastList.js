@@ -86,7 +86,7 @@ function CastList({cast}) {
     };
 
     return (
-        <div id='cast'>
+        <div id='cast' className='fade-in'>
             {listHasMoved && (
                 <CastListControl arrowDir={'up'} onClick={handlePrev} />
             )}

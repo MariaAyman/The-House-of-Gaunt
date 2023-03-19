@@ -22,6 +22,25 @@ code {
     monospace;
 }
 
+/* Fade in animation on load */
+.fade-in{
+  animation: fadeInAnimation ease 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+      
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(-8%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
 .transBack{
   position: absolute;
   top: 0;

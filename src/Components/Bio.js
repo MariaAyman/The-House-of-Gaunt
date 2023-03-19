@@ -3,13 +3,13 @@ import React from 'react';
 function Bio() {
     return (
         <div className='bioCont'>
-            <div className='rate'>
+            <div className='rate fade-in'>
                 <i className="fa-solid fa-star"></i>
                 <p><span>7.0</span>/10</p>
                 <p id='details'>34m . Fantasy, Fan Film, Short . 2021</p>
             </div>
             <div className='synopsis'>
-                <p id='bio'>
+                <p id='bio' className='fade-in'>
                     Following Tom Riddle as he goes down the path of Dark Magic and becomes the Dark Lord that is infamously known in the world of Harry Potter as Lord Voldemort.
                 </p>
                 {/* <div className='trailer'>
