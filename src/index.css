@@ -195,46 +195,91 @@ p span{
   padding-top: 10px;
 }
 
-.trailer{
-  width: 202px;
-  height: 138px;
-  /* margin-top: 10px; */
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  text-decoration: none;
-  color: #fff;
-}
+/*Watch Trailer Button*/
 
-.play-button{
-  width: 60px;
-  height: 60px;
-  background: #0D5B2B;
-  border: 3px solid #000000;
-  border-radius: 50%;
+a {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-button i{
-  /* width: 100%;
-  height: 100%;
-  text-align: center; */
-  font-size: x-large;
-}
-
-
-.button-text{
+  outline: none;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+ }
+ 
+ a.watch-trailer {
+  width: 202px;
+  height: auto;
+ }
+ 
+ a.watch-trailer .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #0D5B2B;
+  border-radius: 1.625rem;
+ }
+ 
+ a.watch-trailer .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+ }
+ 
+ a.watch-trailer .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+ }
+ 
+ a.watch-trailer .circle .icon.arrow::before {
+  position: absolute;
+  top: -0.4rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  color: #fff;
+ }
+ 
+ a.watch-trailer .a-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
   color: #0D5B2B;
   font-weight: 700;
-}
-
-.trailer-link{
-  text-decoration: none;
+  line-height: 1.6;
+  text-align: center;
+  /* text-transform: uppercase; */
+ }
+ 
+ a:hover .circle {
+  width: 100%;
+ }
+ 
+ a:hover .circle .icon.arrow {
+  /* background: #fff; */
+  transform: translate(1rem, 0);
+ }
+ 
+ a:hover .a-text {
   color: #fff;
-}
+ }
 
 /* Gallary */
 #galleryCont{

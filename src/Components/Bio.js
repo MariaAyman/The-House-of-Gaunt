@@ -12,19 +12,11 @@ function Bio() {
                 <p id='bio' className='fade-in'>
                     Following Tom Riddle as he goes down the path of Dark Magic and becomes the Dark Lord that is infamously known in the world of Harry Potter as Lord Voldemort.
                 </p>
-                {/* <div className='trailer'>
-                    <div className='play-button'>
-                        <a className="trailer-link" href="https://www.youtube.com/watch?v=ubRz72gCzKI" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-solid fa-play"></i>
-                        </a>
-                    </div>
-                    <p>Watch Trailer</p>
-                </div> */}
-                <a className='trailer' href='https://www.youtube.com/watch?v=ubRz72gCzKI' target="_blank" rel="noopener noreferrer" role='button'>
-                    <span className='play-button' aria-hidden='true'>
-                        <i className='fa-solid fa-play play-icon'></i>
+                <a className="watch-trailer" href='https://www.youtube.com/watch?v=ubRz72gCzKI' target="_blank" rel="noopener noreferrer" role='button'>
+                    <span className="circle" aria-hidden="true">
+                    <i className="fa-solid fa-play icon arrow"></i>
                     </span>
-                    <span className='button-text'>Watch Trailer</span>
+                    <span className="a-text">Watch Trailer</span>
                 </a>
             </div>
         </div>
