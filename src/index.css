@@ -360,6 +360,23 @@ p span{
   object-fit: cover;
 }
 
+.cast-name a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cast-name a:hover{
+  color: #0D5B2B;
+}
+
+.cast-name #character{
+  font-size: 12px;
+  font-weight: 600;
+  margin: 5px 0 0 0;
+  color: #0D5B2B;
+}
+
 .up, .down{
   text-align: center;
   cursor: pointer;
