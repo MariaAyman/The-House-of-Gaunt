@@ -5,7 +5,7 @@ import CastListControl from './CastListControl';
 function CastList({cast}) {
     const [listHasMoved, setHasMoved] = useState(false);
     const [lowestVisibleIndex, setLowestVisibleIndex] = useState(0);
-    const [itemsInCol] = useState(1);
+    const [itemsInCol] = useState(2);
 
     const renderCastContent = () => {
         const totalItems = cast.length;
@@ -18,7 +18,7 @@ function CastList({cast}) {
             //up
             if(listHasMoved){
                 if(lowestVisibleIndex + i - itemsInCol < 0){
-                    up.push(totalItems - itemsInCol + lowestVisibleIndex + i -1);
+                    up.push(totalItems - itemsInCol + lowestVisibleIndex + i);
                 } else{
                     up.push(i + lowestVisibleIndex - itemsInCol );
                 }
@@ -39,10 +39,10 @@ function CastList({cast}) {
             }
         }
 
-        const combinedIndex = [...up, ...mid, ...down];
+        const shownIndex = [...mid];
 
         const listContent = [];
-        for(let index of combinedIndex){
+        for(let index of shownIndex){
             listContent.push(
                 <CastCard actor={cast[index]} key={index} />
             );
@@ -58,9 +58,9 @@ function CastList({cast}) {
         if(lowestVisibleIndex < itemsInCol && lowestVisibleIndex !== 0){
             newIndex = 0;
         } else if(lowestVisibleIndex - itemsInCol < 0){
-            newIndex = totalItems - itemsInCol;
+            newIndex = totalItems - 1;
         } else{
-            newIndex = lowestVisibleIndex - itemsInCol;
+            newIndex = lowestVisibleIndex - 1;
         }
 
         setLowestVisibleIndex(newIndex);
@@ -71,12 +71,10 @@ function CastList({cast}) {
 
         // get the new lowest visible index
         let newIndex;
-        if (lowestVisibleIndex === totalItems - itemsInCol) {
+        if (lowestVisibleIndex === totalItems - 1) {
             newIndex = 0;
-        } else if (lowestVisibleIndex + itemsInCol > totalItems - itemsInCol) {
-            newIndex = totalItems - itemsInCol;
         } else {
-            newIndex = lowestVisibleIndex + itemsInCol;
+            newIndex = lowestVisibleIndex + 1;
         }
 
         setLowestVisibleIndex(newIndex);

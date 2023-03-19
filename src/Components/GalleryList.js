@@ -8,11 +8,10 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
     //const [sliderMoving, setSliderMovement] = useState(false); //boolean for animation of slider
     //const [movePercent, setMovePercent] = useState(0); //amount to offset slider
     const [lowestVisibleIndex, setLowestVisibleIndex] = useState(0); // lowest visible index of slider items]
-    const [itemsInRow] = useState(1); // number of items to be displayed across screen]
+    const [itemsInRow] = useState(3); // number of items to be displayed across screen]
 
     // render the slider contents
     const renderSliderContent = () => {
-        console.log('renderSliderContent');
         const totalItems = imgs.length;
 
         // slider content made up of left, mid, and right portions to allow continous cycling
@@ -27,7 +26,7 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
                 if(lowestVisibleIndex + i - itemsInRow < 0){
                     left.push(totalItems - itemsInRow + lowestVisibleIndex + i);
                 } else{
-                    left.push(i + lowestVisibleIndex -itemsInRow); //issue here
+                    left.push(i + lowestVisibleIndex -itemsInRow);
                 }
             }
 
@@ -42,32 +41,24 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
             if (i + lowestVisibleIndex + itemsInRow >= totalItems) {
                 right.push(i + lowestVisibleIndex + itemsInRow - totalItems);
             } else {
-                right.push(i + lowestVisibleIndex + itemsInRow);
+                right.push(i + lowestVisibleIndex + itemsInRow -1);
             }
         }
 
-        // combine left, mid, right to have all indexes
-        const combinedIndex = [...left, ...mid, ...right];
+        const shownIndex = [...mid];
 
         const sliderContents = [];
-        for(let index of combinedIndex){
+        for(let index of shownIndex){
             sliderContents.push(
                 <GalleryImg img={imgs[index]} popImg={popImg} setPopImg={setPopImg} key={index} isOpen={isOpen} setIsOpen={setIsOpen} />
             );
         }
-
-        // console.log(sliderContents);
-        // console.log(itemsInRow);
-        // console.log(left);
-        // console.log(mid);
-        // console.log(right);
 
         return sliderContents;
     };
     
     // handle previous control
     const handlePrev = () => {
-        //console.log('handlePrev');
         const totalItems = imgs.length;
 
         //// get the new lowest visible index
@@ -75,9 +66,9 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
         if (lowestVisibleIndex < itemsInRow && lowestVisibleIndex !== 0) {
             newIndex = 0;
         } else if (lowestVisibleIndex - itemsInRow < 0) {
-            newIndex = totalItems - itemsInRow;
+            newIndex = totalItems - 1;
         } else {
-            newIndex = lowestVisibleIndex - itemsInRow;
+            newIndex = lowestVisibleIndex - 1;
         }
 
         setLowestVisibleIndex(newIndex);
@@ -85,17 +76,14 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
     
     // handle previous control
     const handleNext = () => {
-        //console.log('handleNext');
         const totalItems = imgs.length;
 
         // get the new lowest visible index
         let newIndex;
-        if (lowestVisibleIndex === totalItems - itemsInRow) {
+        if (lowestVisibleIndex === totalItems - 1) {
             newIndex = 0;
-        } else if (lowestVisibleIndex + itemsInRow > totalItems - itemsInRow) {
-            newIndex = totalItems - itemsInRow;
         } else {
-            newIndex = lowestVisibleIndex + itemsInRow;
+            newIndex = lowestVisibleIndex + 1;
         }
 
         setLowestVisibleIndex(newIndex);
@@ -112,14 +100,14 @@ function GalleryList({imgs, popImg, setPopImg, isOpen, setIsOpen}) {
     return (
         <div id='gallery'>
             {sliderHasMoved && (
-                <SliderControl arrowDirection={"left"} onClick={handlePrev} /> //<
+                <SliderControl arrowDirection={"left"} onClick={handlePrev} />
             )}
             <div className="slider-content" style={style}>
                 {/* {imgs.map((i) => <GalleryImg img={i} key={i.alt} />)} */}
                 {renderSliderContent()}
             </div>
 
-            <SliderControl arrowDirection={"right"} onClick={handleNext} /> {/* > */}
+            <SliderControl arrowDirection={"right"} onClick={handleNext} />
         </div>
     );
 }
